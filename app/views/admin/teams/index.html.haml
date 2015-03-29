@@ -1,0 +1,9 @@
+%h1 Teamy
+
+= link_to 'Nowy team', new_admin_team_path, class: 'btn btn-default'
+
+- teams.each do |team|
+  .team
+    %h2= team.name
+    = link_to 'Usuń', admin_team_path(team), method: :delete, data: {confirm: 'Jesteś pewien'}
+    = link_to 'Edytuj', edit_admin_team_path(team)

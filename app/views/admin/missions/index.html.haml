@@ -1,0 +1,11 @@
+%h1 Misje
+
+= link_to 'Nowa misja', new_admin_mission_path, class: 'btn btn-default'
+
+- missions.each do |mission|
+  .mission
+    %h2= mission.name
+    %span= mission.start_at
+    = link_to 'Dane misji', mission.external_url, target: '_blank'
+    = link_to 'Edit', edit_admin_mission_path(mission)
+    = link_to 'Usuń', admin_mission_path(mission), method: :delete, data: {confirm: 'Jesteś pewien'}

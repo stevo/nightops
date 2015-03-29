@@ -4,11 +4,20 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :missions
+    resources :missions do
+      resources :invitations, only: [:create, :destroy]
+    end
+
+    resources :teams
   end
 
   resources :missions, only: :index
-  resources :users
+  resources :teams, only: :show do
+  resources :memberships, only: [:create, :destroy]
+end
 
-  root to: 'missions#index'
+
+resources :users
+
+root to: 'missions#index'
 end

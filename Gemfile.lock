@@ -52,6 +52,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
+    business_process (0.0.1)
     byebug (4.0.4)
       columnize (= 0.9.0)
     capybara (2.4.4)
@@ -76,6 +77,7 @@ GEM
     daemons (1.2.2)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
+    decent_exposure (2.3.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -320,10 +322,12 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  business_process
   byebug
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
+  decent_exposure
   devise
   factory_girl_rails
   faker
@@ -336,6 +340,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  pry
   quiet_assets
   rails (= 4.2.1)
   rails_12factor

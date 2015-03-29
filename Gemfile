@@ -16,6 +16,8 @@ gem 'pg'
 gem 'simple_form'
 gem 'thin'
 gem 'upmin-admin'
+gem 'decent_exposure'
+gem 'business_process'
 
 group :development, :test do
   gem 'byebug'
@@ -27,6 +29,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'guard-bundler'

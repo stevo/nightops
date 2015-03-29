@@ -1,0 +1,12 @@
+%h1= team.name
+
+%ul
+  - team.users.each do |user|
+    %li
+      = user.name
+      = link_to 'Usuń', team_membership_path(team, user), method: :delete
+
+
+= simple_form_for :membership, url: team_memberships_path(team) do |f|
+  = f.input :member_id, collection: users_without_teams
+  = f.submit

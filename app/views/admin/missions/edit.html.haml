@@ -1,0 +1,19 @@
+%h1= mission.name
+
+= simple_form_for [:admin, mission] do |f|
+  = f.input :name
+  = f.input :start_at
+  = f.input :external_url
+  = f.submit
+
+%h2 Zaproszenia
+
+%ul
+  - mission.teams.each do |team|
+    %li
+      = team.name
+      = link_to 'Usuń', admin_mission_invitation_path(mission, team), method: :delete
+
+= simple_form_for :invitation, url: admin_mission_invitations_path(mission) do |f|
+  = f.input :team_id, collection: teams_available_to_invite
+  = f.submit

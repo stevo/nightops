@@ -1,1 +1,9 @@
 %h1 Misje
+
+
+- if current_user.team
+  - current_user.team.missions.each do |mission|
+    .mission
+      %h2= mission.name
+      %span= mission.start_at
+      = link_to 'Dane misji', mission.external_url, target: '_blank'
