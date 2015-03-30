@@ -1,6 +1,6 @@
 class MembershipsController < AuthorizedController
   def create
-    User.find(params[:team][:member_id]).update_attribute(:team_id, params[:team_id])
+    User.find(params[:membership][:member_id]).update_attribute(:team_id, params[:team_id])
     redirect_to :back
   end
 
