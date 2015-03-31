@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Dear #{@user.name},
+    %p
+      A new mission is to take place. Refer
+      = link_to 'here', @url
+      for more info
+      %br/

@@ -1,6 +1,9 @@
 class Admin::InvitationsController < Admin::AdminController
+  expose(:team) { Team.find(params[:invitation][:team_id]) }
+  expose(:mission) { Mission.find(params[:mission_id]) }
+
   def create
-    Mission.find(params[:mission_id]).teams << Team.find(params[:invitation][:team_id])
+    InviteTeamToMission.call(self)
     redirect_to :back
   end
 
