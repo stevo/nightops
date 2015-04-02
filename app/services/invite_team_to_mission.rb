@@ -1,6 +1,6 @@
 class InviteTeamToMission < BusinessProcess::Base
   needs :team
-  needs :mission
+  needs :mission_participation_status
 
   def call
     add_team_to_mission and send_invitation_emails

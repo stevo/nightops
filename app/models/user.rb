@@ -12,5 +12,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :teams, foreign_key: :owner_id
+  has_many :participations
   belongs_to :team
 end

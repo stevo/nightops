@@ -11,13 +11,16 @@ Rails.application.routes.draw do
     resources :teams
   end
 
-  resources :missions, only: :index
+  resources :missions, only: :index do
+    resource :participation, only: [:create, :update]
+  end
+
   resources :teams, only: :show do
-  resources :memberships, only: [:create, :destroy]
-end
+    resources :memberships, only: [:create, :destroy]
+  end
 
 
-resources :users
+  resources :users
 
-root to: 'missions#index'
+  root to: 'missions#index'
 end
