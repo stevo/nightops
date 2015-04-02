@@ -1,6 +1,6 @@
 class InviteTeamToMission < BusinessProcess::Base
   needs :team
-  needs :mission_participation_status
+  needs :mission
 
   def call
     add_team_to_mission and send_invitation_emails
@@ -14,7 +14,7 @@ class InviteTeamToMission < BusinessProcess::Base
 
   def send_invitation_emails
     team.users.each do |user|
-      TeamMailer.invitation_notification(user, mission.external_url).deliver
+      ::TeamMailer.invitation_notification(user, mission.external_url).deliver
     end
   end
 end

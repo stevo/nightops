@@ -1,5 +1,4 @@
 class TeamMailer < ApplicationMailer
-
   def invitation_notification(user, url)
     @user = user
     @url = url

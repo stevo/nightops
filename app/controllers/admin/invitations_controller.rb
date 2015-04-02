@@ -1,6 +1,6 @@
 class Admin::InvitationsController < Admin::AdminController
   expose(:team) { Team.find(params[:invitation][:team_id]) }
-  expose(:mission_participation_status) { Mission.find(params[:mission_id]) }
+  expose(:mission) { Mission.find(params[:mission_id]) }
 
   def create
     InviteTeamToMission.call(self)

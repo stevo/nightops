@@ -1,6 +1,6 @@
 class Admin::MissionsController < Admin::AdminController
   expose(:teams_available_to_invite){ Team.where.not(id: mission.team_ids) }
-  expose(:mission_participation_status, attributes: :mission_params)
+  expose(:mission, attributes: :mission_params)
   expose(:missions)
 
   def create
@@ -27,6 +27,6 @@ class Admin::MissionsController < Admin::AdminController
   private
 
   def mission_params
-    params.require(:mission_participation_status).permit(:name, :start_at, :external_url)
+    params.require(:mission).permit(:name, :start_at, :external_url)
   end
 end
