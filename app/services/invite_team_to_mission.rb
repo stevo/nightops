@@ -9,7 +9,7 @@ class InviteTeamToMission < BusinessProcess::Base
   private
 
   def add_team_to_mission
-    mission.teams << team
+    mission.teams << team if team
   end
 
   def send_invitation_emails
