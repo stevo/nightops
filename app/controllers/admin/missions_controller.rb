@@ -5,11 +5,13 @@ class Admin::MissionsController < Admin::AdminController
 
 
   def create
-    if mission.save
-      redirect_to admin_missions_path
+    if params[:clone]
+      missions.find(params[:clone]).amoeba_dup.save
     else
-      render :new
+      return render :new unless mission.save
     end
+
+    redirect_to admin_missions_path
   end
 
   def update

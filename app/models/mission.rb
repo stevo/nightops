@@ -1,6 +1,10 @@
 class Mission < ActiveRecord::Base
   DETAILS_PARAMS = %w(side date_of_mission region invitation_for telephone primary_objective)
 
+  amoeba do
+    append name: '_cloned'
+  end
+
   store_accessor :details, DETAILS_PARAMS
   has_many :invitations
   has_many :teams, through: :invitations

@@ -11,3 +11,4 @@
     = link_to 'Edit', edit_admin_mission_path(mission)
     = link_to 'Show', admin_mission_path(mission)
     = link_to 'Usuń', admin_mission_path(mission), method: :delete, data: {confirm: 'Jesteś pewien'}
+    = link_to 'Klonuj misję', admin_missions_path(clone: mission.id), method: :post

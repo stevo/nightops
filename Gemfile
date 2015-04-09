@@ -20,6 +20,7 @@ gem 'decent_exposure'
 gem 'business_process'
 gem 'redcarpet'
 gem 'draper', '~> 1.3'
+gem 'amoeba'
 
 group :development, :test do
   gem 'byebug'
