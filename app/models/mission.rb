@@ -10,8 +10,4 @@ class Mission < ActiveRecord::Base
 
   scope :for_team, -> (team) { joins(:invitations).where('invitations.team_id' =>  team.id) }
   scope :with_status_for, -> (user) { select("missions.*, participations.status").joins(:participations).where('participations.user_id' =>  user.id) }
-
-  # def details=(hash)
-  #   self[:details]= hash.to_json
-  # end
 end

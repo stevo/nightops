@@ -25,3 +25,11 @@ en:
       'yes': Tak
       'no': Nie
       'maybe': Może
+  mission:
+    'start_at': Data misji
+    'external_url': Link do danych
+    'side': Strony konfliktu
+    'region': Miejsce
+    'invited': Zaproszeni
+    'telephone': Telefon do organizatora
+    'primary_objective': Cele główne

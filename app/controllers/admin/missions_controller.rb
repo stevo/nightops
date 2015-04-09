@@ -1,6 +1,6 @@
 class Admin::MissionsController < Admin::AdminController
   expose(:teams_available_to_invite) { Team.where.not(id: mission.team_ids) }
-  expose(:mission, attributes: :mission_params)
+  expose(:mission, attributes: :mission_params, strategy: DecoratorStrategy)
   expose(:missions)
 
 

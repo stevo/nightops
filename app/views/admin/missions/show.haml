@@ -1,0 +1,13 @@
+%h1
+  =mission.name
+
+= mission.field(:external_url)
+= mission.field(:start_at)
+= mission.field(:side)
+= mission.field(:region)
+= mission.field(:primary_objective)
+= mission.field(:telephone)
+= mission.field(:invited)
+
+
+=link_to 'Powrót do menu', admin_missions_path
